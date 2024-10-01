@@ -12,7 +12,6 @@ $id = decrypt_id($_GET['id']);
 echo $_SESSION['id'];
 echo "<br>";
 echo $id;
-// Kiểm tra xem người dùng đã đăng nhập và có vai trò admin hay chưa
 if (isset($_SESSION['id']) && $_SESSION['id'] == $id) {
     if (!empty($_GET['id'])) {
 
@@ -26,7 +25,6 @@ if (isset($_SESSION['id']) && $_SESSION['id'] == $id) {
     echo "null";
 }
 
-// Chuyển hướng về danh sách người dùng
 header('location: list_users.php');
 exit();
 ?>

@@ -16,16 +16,10 @@ function encrypt_id($id)
     return base64_encode($id . $key);
 }
 
-// Function để giải mã ID
-// function decrypt_id($encrypted_id)
-// {
-//     $key = "secret_key";
-//     $decoded = base64_decode($encrypted_id);
-//     return str_replace($key, '', $decoded);
+
 // }
 $users = $userModel->getUsers($params);
 
-// Tạo một CSRF token và lưu nó trong phiên
 if (empty($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
