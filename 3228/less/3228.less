@@ -1,0 +1,115 @@
+@primary-color: #000;
+@secondary-color: #888;
+@border-color: #ddd;
+@background-color: #fff;
+@highlight-color: orange;
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: @background-color;
+}
+
+.container {
+    width: 100%;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h3 {
+    font-size: 1rem;
+    font-weight: normal;
+    margin-bottom: 20px;
+    color: @primary-color;
+}
+
+.event {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid @border-color;
+    padding: 20px 0;
+    position: relative;
+
+    &:first-of-type {
+        border-top: none;
+    }
+}
+
+.date {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-right: 20px;
+    color: @primary-color;
+    text-align: center;
+
+    .month-year {
+        font-size: 0.8rem;
+        color: @secondary-color;
+    }
+}
+
+.details {
+    flex: 1;
+
+    h4 {
+        font-size: 1.4rem;
+        margin: 0;
+        font-weight: normal;
+        color: @primary-color;
+    }
+
+    p {
+        font-size: 0.9rem;
+        margin: 5px 0 0;
+        color: @secondary-color;
+    }
+}
+
+.icon {
+    height: 20px;
+    width: 20px;
+}
+
+.view-event {
+    margin-left: 20px;
+    padding: 10px 15px;
+    border: 1px solid @primary-color;
+    color: @primary-color;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: all 0.3s ease;
+
+    &:hover {
+        cursor: none;
+        transform: scale(1.05);
+
+        .arrow {
+            transform: translateX(6px);
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 10px; 
+            height: 10px; 
+            background-color: @highlight-color;
+            border-radius: 50%;
+            pointer-events: none;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+.arrow {
+    width: 16px;
+    height: 16px;
+    padding: 2px;
+}
